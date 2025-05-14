@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Rose & Hearts</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .heart-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .heart {
+      position: absolute;
+      bottom: -10px;
+      font-size: 20px;
+      color: rgba(255, 77, 109, 0.7);
+      animation: floatUp 6s infinite ease-in;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+    .heart:nth-child(1)  { left: 5%;   animation-delay: 0s; }
+    .heart:nth-child(2)  { left: 20%;  animation-delay: 1s; }
+    .heart:nth-child(3)  { left: 35%;  animation-delay: 2s; }
+    .heart:nth-child(4)  { left: 50%;  animation-delay: 0.5s; }
+    .heart:nth-child(5)  { left: 65%;  animation-delay: 1.5s; }
+    .heart:nth-child(6)  { left: 80%;  animation-delay: 2.5s; }
+    .heart:nth-child(7)  { left: 15%;  animation-delay: 3s; }
+    .heart:nth-child(8)  { left: 30%;  animation-delay: 4s; }
+    .heart:nth-child(9)  { left: 45%;  animation-delay: 2s; }
+    .heart:nth-child(10) { left: 70%;  animation-delay: 3.5s; }
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #fff;
+    }
+    .rose {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 40px;
+      animation: pulse 2s infinite;
+    }
+    .petal {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ff4d6d 20%, #cc0033 80%);
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom center;
+    }
+    .petal:nth-child(1) { transform: rotate(0deg)   translateY(-50px); }
+    .petal:nth-child(2) { transform: rotate(72deg)  translateY(-50px); }
+    .petal:nth-child(3) { transform: rotate(144deg) translateY(-50px); }
+    .petal:nth-child(4) { transform: rotate(216deg) translateY(-50px); }
+    .petal:nth-child(5) { transform: rotate(288deg) translateY(-50px); }
+    .stem {
+      width: 10px;
+      height: 80px;
+      background: #0a0;
+      border-radius: 5px;
+      animation: sway 3s infinite alternate ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
+    }
+    @keyframes sway {
+      0%   { transform: rotate(-2deg); }
+      100% { transform: rotate(2deg); }
+    }
+    .love-text {
+      font-size: 2.5em;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff4d6d, #ffe6eb, #ff4d6d);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: flash 1s infinite alternate;
+      padding: 0 20px;
+    }
+    @keyframes flash {
+      from {
+        text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
+      }
+      to {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #ff4d6d;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart-container">
+    <span class="heart">❤</span><span class="heart">❤</span><span class="heart">❤</span>
+    <span class="heart">❤</span><span class="heart">❤</span><span class="heart">❤</span>
+    <span class="heart">❤</span><span class="heart">❤</span><span class="heart">❤</span>
+    <span class="heart">❤</span>
+  </div>
+  <div class="content">
+    <div class="rose">
+      <div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div>
+    </div>
+    <div class="stem"></div>
+    <div class="love-text">LOVE YOU NOMENKINS</div>
+  </div>
+</body>
+</html>
